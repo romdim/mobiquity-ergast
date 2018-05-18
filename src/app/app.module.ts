@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { ChampionsComponent } from './champions/champions.component';
+import { WinnersComponent } from './winners/winners.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChampionsComponent
+    ChampionsComponent,
+    WinnersComponent
   ],
   imports: [
     BrowserModule,
