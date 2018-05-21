@@ -1,3 +1,20 @@
-<p>
-  champions works!
-</p>
+<h1>F1 World Champions</h1>
+<h3>Seasons</h3>
+
+<ul class="champions">
+  <li *ngFor="let champion of champions">
+    <a routerLink="/{{champion.season}}/winners">
+      <span class="badge">{{champion.season}}</span> {{champion.rounds}}
+    </a>
+    <div>
+      Points: {{champion.points}}
+      Wins: {{champion.wins}}
+      Name: {{champion.driver.getFullName()}}
+      Age at the time: {{champion.driver.ageThen(champion.season)}}
+      Nationality: {{champion.driver.nationality}}
+    </div>
+    <a href="{{champion.constructorDetails.url}}">
+      Constructor: {{champion.constructorDetails.name}}
+    </a>
+  </li>
+</ul>
