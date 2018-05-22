@@ -6,7 +6,9 @@ export const environment = {
   production: false,
 
   // URL of development API
-  apiUrl: 'https://ergast.com/api/f1'
+  apiUrl: 'https://ergast.com/api/f1',
+  // Google Maps API key
+  AgmApiKey: ''
 };
 
 /*
