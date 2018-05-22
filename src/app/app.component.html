@@ -1,1 +1,19 @@
 <router-outlet></router-outlet>
+
+<mat-progress-spinner *ngIf="showLoader"
+  class="spinner"
+  color="accent"
+  mode="indeterminate">
+</mat-progress-spinner>
+
+
+<footer class="footer">
+  <div class="footer-list">
+    <div class="footer-item">
+      Website designed with <mat-icon class="md-14 md-dark">favorite</mat-icon> by <a href="https://github.com/romdim">Romanos Tsouroplis</a>
+    </div>
+    <div class="footer-item">
+      Icons designed by <a href="https://www.flaticon.com/authors/freepik">freepik</a> and <a href="https://www.flaticon.com/authors/mynamepong">mynamepong</a> from Flaticon
+    </div>
+  </div>
+</footer>

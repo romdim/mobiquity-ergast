@@ -22,6 +22,7 @@ import { ChampionsComponent } from './champions/champions.component';
 import { WinnersComponent } from './winners/winners.component';
 import { OrdinalPipe } from './shared/ordinal.pipe';
 import { environment } from '../environments/environment';
+import { LoaderService } from './shared/loader.service';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,9 @@ import { environment } from '../environments/environment';
     //   apiKey: environment.AgmApiKey
     // })
   ],
-  providers: [],
+  providers: [
+    LoaderService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
