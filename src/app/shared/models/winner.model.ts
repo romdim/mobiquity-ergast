@@ -1,3 +1,6 @@
+import * as countries from 'i18n-iso-countries';
+declare var require: any;
+
 import { Driver } from './driver.model';
 import { Constructor } from './constructor.model';
 
@@ -32,6 +35,15 @@ export class Winner {
 
   getRaceDateTime(): string {
     return this.raceDate + ' ' + this.raceTime;
+  }
+
+  /**
+   * @description This method returns the Alpha2Code of a country
+   */
+  getCountryIso(): string {
+    countries.registerLocale(require('i18n-iso-countries/langs/en.json'));
+    this.locationCountry = this.locationCountry === 'USA' ? 'United States Of America' : this.locationCountry;
+    return countries.getAlpha2Code(this.locationCountry, 'en');
   }
 
   /**

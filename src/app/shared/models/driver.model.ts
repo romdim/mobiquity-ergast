@@ -1,6 +1,6 @@
-// Should first install --save flag-icon-css and i18n-iso-countries
 // import * as countries from 'i18n-iso-countries';
 // declare var require: any;
+
 export class Driver {
   code: string;
   dateOfBirth: string;

@@ -6,6 +6,10 @@
   background-color: #ffd740;
 }
 
+.mat-expansion-panel-header-description {
+  flex-grow: 0;
+}
+
 agm-map {
   width: 100%;
   height: 300px;

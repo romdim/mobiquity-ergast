@@ -8,15 +8,13 @@
 
 <mat-accordion>
   <mat-expansion-panel *ngFor="let winner of winners; index as i" [expanded]="step === i" (opened)="setStep(i)" hideToggle="false" class="{{winner.driver.driverId === champion.driver.driverId ? 'highlight' : ''}}">
-    <!-- <div *ngIf="champion">{{winner.driver.driverId === champion.driver.driverId}}</div> -->
     <mat-expansion-panel-header>
       <mat-panel-title>
         Round {{winner.round}} - {{winner.driver.getFullName()}}
       </mat-panel-title>
       <mat-panel-description>
-        {{winner.locationLocality}} - {{winner.locationCountry}}
+        {{winner.locationLocality}} - &nbsp;<span class="flag-icon" [ngClass]="'flag-icon-' + (winner.getCountryIso() | lowercase)"></span>
       </mat-panel-description>
-      <!-- <span class="flag-icon" [ngClass]="'flag-icon-' + champion.driver.getCountryIso()"></span> -->
     </mat-expansion-panel-header>
 
     <mat-grid-list cols="{{cols}}" rowHeight="{{rowHeight}}" (window:resize)="onResize($event)">

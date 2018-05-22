@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
-// @import "~flag-icon-css/css/flag-icon.min.css";
+@import "~flag-icon-css/css/flag-icon.min.css";
 
 @import "~src/styles/global/mat-icons";
 @import '~src/styles/global/mat-list';
@@ -14,5 +14,4 @@
 
 p {
   width: 100%;
-  text-align: center;
 }
