@@ -1,10 +1,23 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
+import {
+  MatBadgeModule,
+  MatButtonModule,
+  MatDividerModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatListModule,
+  MatProgressSpinnerModule,
+  MatToolbarModule
+} from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ChampionsComponent } from './champions.component';
 import { ErgastService } from '../shared/ergast.service';
 import { Champion } from '../shared/models/champion.model';
+import { LoaderService } from '../shared/loader.service';
 
 describe('ChampionsComponent', () => {
   let component: ChampionsComponent;
@@ -15,11 +28,21 @@ describe('ChampionsComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
-        HttpClientModule
+        HttpClientModule,
+
+        BrowserAnimationsModule,
+        MatBadgeModule,
+        MatToolbarModule,
+        MatExpansionModule,
+        MatGridListModule,
+        MatIconModule,
+        MatListModule,
+        MatDividerModule
       ],
       declarations: [ ChampionsComponent ],
       providers: [
-        ErgastService
+        ErgastService,
+        LoaderService
       ]
     })
     .compileComponents()
