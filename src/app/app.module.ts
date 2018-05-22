@@ -47,11 +47,9 @@ import { LoaderService } from './shared/loader.service';
     MatProgressSpinnerModule,
     MatToolbarModule,
 
-    // Have been trying all day to acquire a key accross different users, cards, os
-    // but unfortunately google cloud seems to be down for enabling new APIs
-    // AgmCoreModule.forRoot({
-    //   apiKey: environment.AgmApiKey
-    // })
+    AgmCoreModule.forRoot({
+      apiKey: environment.AgmApiKey
+    })
   ],
   providers: [
     LoaderService

@@ -8,7 +8,7 @@ export const environment = {
   // URL of development API
   apiUrl: 'https://ergast.com/api/f1',
   // Google Maps API key
-  AgmApiKey: ''
+  AgmApiKey: 'AIzaSyC6NmPbYGjl3DbruEniY5t3Xe4DtVC6cxA'
 };
 
 /*

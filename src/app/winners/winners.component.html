@@ -4,17 +4,17 @@
   <img src="assets/images/finish-line.svg" alt="image" class="svg-48">
 </mat-toolbar>
 
-<a mat-stroked-button color="accent" class="padding-10" href="/"><mat-icon class="md-14">keyboard_return</mat-icon>Back to Champions</a>
+<a mat-stroked-button color="accent" class="padding-10" href="champions"><mat-icon class="md-14">keyboard_return</mat-icon>Back to Champions</a>
 
 <mat-accordion>
   <mat-expansion-panel *ngFor="let winner of winners; index as i" [expanded]="step === i" (opened)="setStep(i)" hideToggle="false" class="{{winner.driver.driverId === champion.driver.driverId ? 'highlight' : ''}}">
     <!-- <div *ngIf="champion">{{winner.driver.driverId === champion.driver.driverId}}</div> -->
     <mat-expansion-panel-header>
       <mat-panel-title>
-        {{winner.round}}
+        Round {{winner.round}} - {{winner.driver.getFullName()}}
       </mat-panel-title>
       <mat-panel-description>
-        {{winner.driver.getFullName()}} - {{winner.locationLocality}} - {{winner.locationCountry}}
+        {{winner.locationLocality}} - {{winner.locationCountry}}
       </mat-panel-description>
       <!-- <span class="flag-icon" [ngClass]="'flag-icon-' + champion.driver.getCountryIso()"></span> -->
     </mat-expansion-panel-header>
@@ -48,7 +48,7 @@
     
     <!-- <mat-divider></mat-divider> -->
 
-    <!-- <agm-map [latitude]="winner.locationLat" [longitude]="winner.locationLong"></agm-map> -->
+    <agm-map [latitude]="winner.locationLat" [longitude]="winner.locationLong"></agm-map>
 
     <mat-action-row>
       <button *ngIf="i>0" mat-button color="warn" (click)="prevStep()">Previous</button>
