@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+/* @import "~@angular/material/prebuilt-themes/purple-green.css"; */
+/* @import "~@angular/material/prebuilt-themes/pink-bluegrey.css"; */
+/* @import "~@angular/material/prebuilt-themes/deeppurple-amber.css"; */
+// @import "~flag-icon-css/css/flag-icon.min.css";
+
+@import "~src/styles/global/mat-icons";
+@import '~src/styles/global/mat-list';
+@import '~src/styles/global/svg';
+
+.fill-remaining-space {
+  /* This fills the remaining space, by using flexbox. 
+     Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+
+p {
+  width: 100%;
+  text-align: center;
+}
