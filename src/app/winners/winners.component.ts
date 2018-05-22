@@ -15,7 +15,7 @@ export class WinnersComponent implements OnInit {
   champion: Champion;
   season: string;
   winners: Winner[];
-  step = 0;
+  step = -1;
   cols = 1;
   mainColSpan = 1;
   rowSpan = 2;

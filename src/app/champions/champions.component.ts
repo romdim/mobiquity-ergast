@@ -12,7 +12,7 @@ import { LoaderService } from '../shared/loader.service';
 })
 export class ChampionsComponent implements OnInit {
   champions: Champion[];
-  step = 0;
+  step = -1;
   cols = 1;
   mainColSpan = 1;
   mainRowSpan = 2;
