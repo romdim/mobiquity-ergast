@@ -1,3 +1,6 @@
+// Should first install --save flag-icon-css and i18n-iso-countries
+// import * as countries from 'i18n-iso-countries';
+// declare var require: any;
 export class Driver {
   code: string;
   dateOfBirth: string;
@@ -30,6 +33,18 @@ export class Driver {
     const yearOfBirth: number = new Date(this.dateOfBirth).getFullYear();
     return yearNow - yearOfBirth;
   }
+
+  /**
+   * @description This method return the Alpha2Code of a country by nationality
+   * Currently not implemented unfortunately, will pr it soon though
+   * at https://github.com/michaelwittig/node-i18n-iso-countries
+   * to use along with https://github.com/lipis/flag-icon-css
+   * for showing flags instead of nationality of drivers
+   */
+  // getCountryIso(): string {
+    // countries.registerLocale(require('i18n-iso-countries/langs/en.json'));
+    // return countries.getAlpha2CodeFromNat(this.nationality, 'en');
+  // }
 
   /**
    * @description This method returns first and last name concatenated
