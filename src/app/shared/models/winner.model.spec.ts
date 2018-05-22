@@ -9,8 +9,8 @@ describe('Model: Winner', () => {
     raceUrl: 'http://en.wikipedia.org/wiki/2005_Australian_Grand_Prix',
     circuitName: 'Albert Park Grand Prix Circuit',
     circuitUrl: 'http://en.wikipedia.org/wiki/Melbourne_Grand_Prix_Circuit',
-    locationLat: '-37.8497',
-    locationLong: '144.968',
+    locationLat: -37.8497,
+    locationLong: 144.968,
     locationLocality: 'Melbourne',
     locationCountry: 'Australia',
     raceDate: '2005-03-06',
@@ -61,8 +61,8 @@ describe('Model: Winner', () => {
           url: 'http://en.wikipedia.org/wiki/Melbourne_Grand_Prix_Circuit',
           circuitName: 'Albert Park Grand Prix Circuit',
           Location: {
-            lat: '-37.8497',
-            long: '144.968',
+            lat: -37.8497,
+            long: 144.968,
             locality: 'Melbourne',
             country: 'Australia'
           }
