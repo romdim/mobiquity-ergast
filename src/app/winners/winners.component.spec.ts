@@ -2,13 +2,27 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+import { of } from 'rxjs';
+import {
+  MatBadgeModule,
+  MatButtonModule,
+  MatDividerModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatListModule,
+  MatProgressSpinnerModule,
+  MatToolbarModule
+} from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { WinnersComponent } from './winners.component';
 import { ErgastService } from '../shared/ergast.service';
 import { Champion } from '../shared/models/champion.model';
 import { Winner } from '../shared/models/winner.model';
-import { of } from 'rxjs';
+import { OrdinalPipe } from '../shared/ordinal.pipe';
 import { ActivatedRouteStub } from '../../testing/activated-route-stub';
+import { LoaderService } from '../shared/loader.service';
 
 describe('WinnersComponent', () => {
   const activatedRoute = new ActivatedRouteStub();
@@ -21,11 +35,24 @@ describe('WinnersComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
-        HttpClientModule
+        HttpClientModule,
+
+        BrowserAnimationsModule,
+        MatBadgeModule,
+        MatToolbarModule,
+        MatExpansionModule,
+        MatGridListModule,
+        MatIconModule,
+        MatListModule,
+        MatDividerModule
       ],
-      declarations: [ WinnersComponent ],
+      declarations: [
+        WinnersComponent,
+        OrdinalPipe
+      ],
       providers: [
         ErgastService,
+        LoaderService,
         { provide: ActivatedRoute, useValue: activatedRoute }
       ]
     })
