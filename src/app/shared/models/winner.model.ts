@@ -20,7 +20,7 @@ export class Winner {
   constructorDetails: Constructor;
 
   winningTime: string;
-  fastestLap: number;
+  fastestLap: string;
   fastestLapTime: string;
   fastestLapAverageSpeed: string;
   fastestLapMeasurementUnit: string;
@@ -28,6 +28,10 @@ export class Winner {
   constructor(values: Object = {}) {
     Object.assign(this, values);
     return this;
+  }
+
+  getRaceDateTime(): string {
+    return this.raceDate + ' ' + this.raceTime;
   }
 
   /**
@@ -40,8 +44,8 @@ export class Winner {
     this.raceUrl = json.url;
     this.circuitName = json.Circuit.circuitName;
     this.circuitUrl = json.Circuit.url;
-    this.locationLat = json.Circuit.Location.lat;
-    this.locationLong = json.Circuit.Location.long;
+    this.locationLat = +json.Circuit.Location.lat;
+    this.locationLong = +json.Circuit.Location.long;
     this.locationLocality = json.Circuit.Location.locality;
     this.locationCountry = json.Circuit.Location.country;
     this.raceDate = json.date;
