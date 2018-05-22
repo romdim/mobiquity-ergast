@@ -11,6 +11,8 @@ describe('Model: Winner', () => {
     circuitUrl: 'http://en.wikipedia.org/wiki/Melbourne_Grand_Prix_Circuit',
     locationLat: '-37.8497',
     locationLong: '144.968',
+    locationLocality: 'Melbourne',
+    locationCountry: 'Australia',
     raceDate: '2005-03-06',
     raceTime: '14:00:00Z',
     laps: '57',

@@ -9,6 +9,8 @@ export class Winner {
   circuitUrl: string;
   locationLat: number;
   locationLong: number;
+  locationLocality: string;
+  locationCountry: string;
   raceDate: string;
   raceTime: string;
   laps: string;
@@ -40,6 +42,8 @@ export class Winner {
     this.circuitUrl = json.Circuit.url;
     this.locationLat = json.Circuit.Location.lat;
     this.locationLong = json.Circuit.Location.long;
+    this.locationLocality = json.Circuit.Location.locality;
+    this.locationCountry = json.Circuit.Location.country;
     this.raceDate = json.date;
     this.raceTime = json.time;
     this.laps = json.Results[0].laps;
