@@ -42,8 +42,24 @@ export class Winner {
    */
   getCountryIso(): string {
     countries.registerLocale(require('i18n-iso-countries/langs/en.json'));
-    this.locationCountry = this.locationCountry === 'USA' ? 'United States Of America' : this.locationCountry;
-    return countries.getAlpha2Code(this.locationCountry, 'en');
+    return countries.getAlpha2Code(this.sanitizedCountryName(), 'en');
+  }
+
+  /**
+   * @description Get proper names for matching the i18n iso countries library
+   */
+  sanitizedCountryName(): string {
+    if (this.locationCountry === 'USA') {
+      return 'United States Of America';
+    } else if (this.locationCountry === 'UK') {
+      return 'United Kingdom';
+    } else if (this.locationCountry === 'UAE') {
+      return 'United Arab Emirates';
+    } else if (this.locationCountry === 'Korea') {
+      return 'South Korea';
+    } else {
+      return this.locationCountry;
+    }
   }
 
   /**
@@ -69,11 +85,22 @@ export class Winner {
     this.constructorDetails = new Constructor(json.Results[0].Constructor);
 
     this.winningTime = json.Results[0].Time.time;
-    this.fastestLap = json.Results[0].FastestLap.lap;
-    this.fastestLapTime = json.Results[0].FastestLap.Time.time;
-    this.fastestLapAverageSpeed = json.Results[0].FastestLap.AverageSpeed.speed;
-    this.fastestLapMeasurementUnit = json.Results[0].FastestLap.AverageSpeed.units;
+    const fastestLapObject = json.Results[0].FastestLap;
+    this.fastestLap = this.deserializerTryValue(fastestLapObject, fastestLapObject.lap);
+    this.fastestLapTime = this.deserializerTryValue(fastestLapObject, fastestLapObject.Time.time);
+    this.fastestLapAverageSpeed = this.deserializerTryValue(fastestLapObject, fastestLapObject.AverageSpeed.speed);
+    this.fastestLapMeasurementUnit = this.deserializerTryValue(fastestLapObject, fastestLapObject.AverageSpeed.units);
 
     return this;
+  }
+
+  /**
+   * @description This method is like try - catch for checking if a certain key from an Object
+   * @param objectKeyToTry - This is the object we want to check if exists
+   * @param objectKeyToGet - This is the key for which we need the value
+   * @param catchValue - If the key does not exist, this is our fallback
+   */
+  deserializerTryValue(objectKeyToTry: any, objectKeyToGet: any, catchValue = 'Not recorded'): string {
+    return objectKeyToTry ? objectKeyToGet : catchValue;
   }
 }

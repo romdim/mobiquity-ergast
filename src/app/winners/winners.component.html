@@ -7,7 +7,11 @@
 <a mat-stroked-button color="accent" class="padding-10" href="champions"><mat-icon class="md-14">keyboard_return</mat-icon>Back to Champions</a>
 
 <mat-accordion>
-  <mat-expansion-panel *ngFor="let winner of winners; index as i" [expanded]="step === i" (opened)="setStep(i)" hideToggle="false" class="{{winner.driver.driverId === champion.driver.driverId ? 'highlight' : ''}}">
+  <mat-expansion-panel *ngFor="let winner of winners; index as i"
+    [expanded]="step === i"
+    (opened)="setStep(i)"
+    hideToggle="false"
+    class="{{winner.driver.driverId === champion.driver.driverId ? 'highlight' : ''}}">
     <mat-expansion-panel-header>
       <mat-panel-title>
         Round {{winner.round}} - {{winner.driver.getFullName()}}
@@ -46,7 +50,12 @@
     
     <!-- <mat-divider></mat-divider> -->
 
-    <agm-map [latitude]="winner.locationLat" [longitude]="winner.locationLong"></agm-map>
+    <agm-map
+      *ngIf="step === i"
+      [latitude]="winner.locationLat"
+      [longitude]="winner.locationLong"
+      [zoom]="15"
+      [zoomControl]="false"></agm-map>
 
     <mat-action-row>
       <button *ngIf="i>0" mat-button color="warn" (click)="prevStep()">Previous</button>
