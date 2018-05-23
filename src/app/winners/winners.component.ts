@@ -16,10 +16,12 @@ export class WinnersComponent implements OnInit {
   season: string;
   winners: Winner[];
   step = -1;
-  cols = 1;
+  cols = 2;
   mainColSpan = 1;
-  rowSpan = 2;
-  rowHeight = '1:1';
+  mainRowSpan = 3;
+  mapRowSpan = 3;
+  rowHeight = '3:1';
+  // dividerShow = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -95,25 +97,44 @@ export class WinnersComponent implements OnInit {
    * @param windowWidth - The size of the window width
    */
   resizeGrid(windowWidth: number): void {
-    if (windowWidth < 850) {
-      this.cols = 4;
-      this.mainColSpan = 3;
-      this.rowSpan = 2;
-
-      // if (windowWidth > 540) {
-      //   this.rowHeight = '1:1';
-      // } else if (windowWidth > 350) {
-      //   this.rowHeight = '4:1';
-      // } else if (windowWidth > 300) {
-      //   this.rowHeight = '3:1';
-      // } else {
-      //   this.rowHeight = '2:1';
-      // }
+    if (windowWidth < 950) {
+      this.cols = 1;
+      this.mainColSpan = 1;
+      this.mainRowSpan = 4;
+      this.mapRowSpan = 3;
+      this.rowHeight = '5.5:1';
+      if (windowWidth < 400) {
+        this.mainRowSpan = 20;
+        this.mapRowSpan = 20;
+        this.rowHeight = '9:1';
+      } else if (windowWidth < 500) {
+        this.mainRowSpan = 20;
+        this.mapRowSpan = 20;
+        this.rowHeight = '12:1';
+      } else if (windowWidth < 620) {
+        this.mainRowSpan = 15;
+        this.mapRowSpan = 15;
+        this.rowHeight = '12:1';
+      } else if (windowWidth < 700) {
+        this.mainRowSpan = 10;
+        this.mapRowSpan = 10;
+        this.rowHeight = '10:1';
+      } else if (windowWidth < 840) {
+        this.mainRowSpan = 6;
+        this.mapRowSpan = 6;
+        this.rowHeight = '7:1';
+      }
     } else {
-      this.cols = 4;
-      this.mainColSpan = 3;
-      this.rowSpan = 1;
-      this.rowHeight = '1:1';
+      this.cols = 2;
+      this.mainColSpan = 1;
+      this.mainRowSpan = 3;
+      this.mapRowSpan = 3;
+      this.rowHeight = '3:1';
+      if (windowWidth < 1200) {
+        this.mainRowSpan = 5;
+        this.mapRowSpan = 3;
+        this.rowHeight = '4:1';
+      }
     }
   }
 }

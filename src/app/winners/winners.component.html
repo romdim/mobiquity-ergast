@@ -1,7 +1,7 @@
 <mat-toolbar color="primary" *ngIf="season">
   <h1>F1 {{season}} Winners</h1>
   <span class="fill-remaining-space"></span>
-  <img src="assets/images/finish-line.svg" alt="image" class="svg-48">
+  <img src="assets/images/finish-line.svg" alt="finish line image" class="svg-48">
 </mat-toolbar>
 
 <a
@@ -20,7 +20,7 @@
     class="{{winner.driver.driverId === champion.driver.driverId ? 'highlight' : ''}}">
     <mat-expansion-panel-header>
       <mat-panel-title>
-        Round {{winner.round}} - {{winner.driver.getFullName()}}
+        Round {{winner.round}} - {{winner.driver.getFullName()}}&nbsp;&nbsp;<img src="assets/images/cup.svg" alt="trophy image" class="svg-18" *ngIf="winner.driver.driverId === champion.driver.driverId">
       </mat-panel-title>
       <mat-panel-description>
         {{winner.locationLocality}} - &nbsp;<span class="flag-icon" [ngClass]="'flag-icon-' + (winner.getCountryIso() | lowercase)"></span>
@@ -28,40 +28,82 @@
     </mat-expansion-panel-header>
 
     <mat-grid-list cols="{{cols}}" rowHeight="{{rowHeight}}" (window:resize)="onResize($event)">
-      <mat-grid-tile rowspan="{{rowSpan}}">
-        <img src="assets/images/cockpit.svg" alt="image" class="svg-64">
-      </mat-grid-tile>
-      <mat-grid-tile colspan="{{mainColSpan}}" rowspan="{{rowSpan}}">
+      <mat-grid-tile colspan="{{mainColSpan}}" rowspan="{{mainRowSpan}}">
         <mat-list>
           <mat-list-item>
             <p>
-              <a href="{{winner.driver.url}}" target="_blank">{{winner.driver.getFullName()}}<mat-icon class="md-14 md-dark">open_in_new</mat-icon></a> is <b>{{winner.driver.nationality}}</b> and was <b>{{winner.driver.ageThen(champion.season)}}</b> years old in {{season}}.
+              <b>Full Name:</b>&nbsp;<a href="{{winner.driver.url}}" target="_blank">{{winner.driver.getFullName()}}<mat-icon class="md-14 md-dark">open_in_new</mat-icon></a>
             </p>
           </mat-list-item>
           <mat-divider></mat-divider>
           <mat-list-item>
             <p>
-              {{winner.driver.givenName}} won at <b>{{winner.getRaceDateTime() | date:'d/M/yyyy HH:mm'}}</b> during <b><a href="{{winner.raceUrl}}" target="_blank">{{winner.raceName}}</a> - <a href="{{winner.circuitUrl}}" target="_blank">{{winner.circuitName}}</a><mat-icon class="md-14 md-dark">open_in_new</mat-icon></b> running <b>{{winner.laps}}</b> laps at only <b>{{winner.winningTime}}</b> in a <b><a href="{{winner.constructorDetails.url}}" target="_blank">{{winner.constructorDetails.name}}<mat-icon class="md-14 md-dark">open_in_new</mat-icon></a></b>.
+              <b>Nationality:</b> {{winner.driver.nationality}}
+            </p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>
+            <p><b>Age in {{season}}:</b> {{winner.driver.ageThen(season)}}</p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>
+            <p>
+              <b>Date:</b>&nbsp;{{winner.getRaceDateTime() | date:'d/M/yyyy HH:mm'}}
             </p>
           </mat-list-item>
           <mat-divider></mat-divider>
           <mat-list-item>
             <p>
-              The best lap was <b>{{winner.fastestLap | ordinal}}</b>, running in average with <b>{{winner.fastestLapAverageSpeed}} {{winner.fastestLapMeasurementUnit}}</b> at only <b>{{winner.fastestLapTime}}</b>.
+              <b>Race:</b>&nbsp;<a href="{{winner.raceUrl}}" target="_blank">{{winner.raceName}}</a> - <a href="{{winner.circuitUrl}}" target="_blank">{{winner.circuitName}}</a><mat-icon class="md-14 md-dark">open_in_new</mat-icon>
+            </p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>
+            <p>
+              <b>Laps:</b> {{winner.laps}}
+            </p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>
+            <p>
+              <b>Time:</b> {{winner.winningTime}}
+            </p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>
+            <p>
+              <b>Car:</b>&nbsp;<a href="{{winner.constructorDetails.url}}" target="_blank">{{winner.constructorDetails.name}}<mat-icon class="md-14 md-dark">open_in_new</mat-icon></a>
+            </p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>
+            <p>
+              <b>Fastest Lap:</b> {{winner.fastestLap | ordinal}}
+            </p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>
+            <p>
+              <b>Average Speed:</b> {{winner.fastestLapAverageSpeed}} {{winner.fastestLapMeasurementUnit}}
+            </p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>
+            <p>
+              <b>Timed:</b> {{winner.fastestLapTime}}
             </p>
           </mat-list-item>
         </mat-list>
       </mat-grid-tile>
+      <mat-grid-tile colspan="{{mainColSpan}}" rowspan="{{mapRowSpan}}">
+        <agm-map class="flex-center"
+          *ngIf="step === i"
+          [latitude]="winner.locationLat"
+          [longitude]="winner.locationLong"
+          [zoom]="15"
+          [zoomControl]="false"></agm-map>
+      </mat-grid-tile>
     </mat-grid-list>
-    
-    <!-- <mat-divider></mat-divider> -->
-
-    <agm-map
-      *ngIf="step === i"
-      [latitude]="winner.locationLat"
-      [longitude]="winner.locationLong"
-      [zoom]="15"
-      [zoomControl]="false"></agm-map>
 
     <mat-action-row>
       <button *ngIf="i>0" mat-button color="warn" (click)="prevStep()">Previous</button>
