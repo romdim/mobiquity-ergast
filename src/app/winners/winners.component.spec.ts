@@ -15,6 +15,7 @@ import {
   MatToolbarModule
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AgmCoreModule } from '@agm/core';
 
 import { WinnersComponent } from './winners.component';
 import { ErgastService } from '../shared/ergast.service';
@@ -23,6 +24,7 @@ import { Winner } from '../shared/models/winner.model';
 import { OrdinalPipe } from '../shared/ordinal.pipe';
 import { ActivatedRouteStub } from '../../testing/activated-route-stub';
 import { LoaderService } from '../shared/loader.service';
+import { environment } from '../../environments/environment';
 
 describe('WinnersComponent', () => {
   const activatedRoute = new ActivatedRouteStub();
@@ -44,7 +46,11 @@ describe('WinnersComponent', () => {
         MatGridListModule,
         MatIconModule,
         MatListModule,
-        MatDividerModule
+        MatDividerModule,
+
+        AgmCoreModule.forRoot({
+          apiKey: environment.AgmApiKey
+        })
       ],
       declarations: [
         WinnersComponent,
