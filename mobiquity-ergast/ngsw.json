@@ -1,0 +1,103 @@
+{
+  "configVersion": 1,
+  "index": "https://romdim.github.io/mobiquity-ergast/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "https://romdim.github.io/mobiquity-ergast/favicon.ico",
+        "https://romdim.github.io/mobiquity-ergast/index.html",
+        "https://romdim.github.io/mobiquity-ergast/main.09af6e5b034c04044d6b.js",
+        "https://romdim.github.io/mobiquity-ergast/polyfills.b4daf421c94934f530d4.js",
+        "https://romdim.github.io/mobiquity-ergast/runtime.a66f828dca56eeb90e02.js",
+        "https://romdim.github.io/mobiquity-ergast/styles.e4b1249d8376d327ecbb.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "https://romdim.github.io/mobiquity-ergast/assets/icons/android-chrome-192x192.png",
+        "https://romdim.github.io/mobiquity-ergast/assets/icons/android-chrome-512x512.png",
+        "https://romdim.github.io/mobiquity-ergast/assets/icons/apple-touch-icon.png",
+        "https://romdim.github.io/mobiquity-ergast/assets/icons/favicon-128x128.png",
+        "https://romdim.github.io/mobiquity-ergast/assets/icons/favicon-144x144.png",
+        "https://romdim.github.io/mobiquity-ergast/assets/icons/favicon-152x152.png",
+        "https://romdim.github.io/mobiquity-ergast/assets/icons/favicon-16x16.png",
+        "https://romdim.github.io/mobiquity-ergast/assets/icons/favicon-192x192.png",
+        "https://romdim.github.io/mobiquity-ergast/assets/icons/favicon-32x32.png",
+        "https://romdim.github.io/mobiquity-ergast/assets/icons/favicon-384x384.png",
+        "https://romdim.github.io/mobiquity-ergast/assets/icons/favicon-512x512.png",
+        "https://romdim.github.io/mobiquity-ergast/assets/icons/favicon-96x96.png",
+        "https://romdim.github.io/mobiquity-ergast/assets/icons/mstile-144x144.png",
+        "https://romdim.github.io/mobiquity-ergast/assets/icons/mstile-150x150.png",
+        "https://romdim.github.io/mobiquity-ergast/assets/icons/mstile-310x150.png",
+        "https://romdim.github.io/mobiquity-ergast/assets/icons/mstile-310x310.png",
+        "https://romdim.github.io/mobiquity-ergast/assets/icons/mstile-70x70.png",
+        "https://romdim.github.io/mobiquity-ergast/assets/icons/safari-pinned-tab.svg",
+        "https://romdim.github.io/mobiquity-ergast/assets/images/cockpit.svg",
+        "https://romdim.github.io/mobiquity-ergast/assets/images/cup.svg",
+        "https://romdim.github.io/mobiquity-ergast/assets/images/driver.svg",
+        "https://romdim.github.io/mobiquity-ergast/assets/images/f1.svg",
+        "https://romdim.github.io/mobiquity-ergast/assets/images/finish-line.svg",
+        "https://romdim.github.io/mobiquity-ergast/assets/images/trophy.svg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "https://romdim.github.io/mobiquity-ergast/assets/icons/android-chrome-192x192.png": "122c12fe3260bfbeafd1198dc04d2ed0ca93a7ab",
+    "https://romdim.github.io/mobiquity-ergast/assets/icons/android-chrome-512x512.png": "02525e0aa66a6cdeb22147b8fdda257f219c552d",
+    "https://romdim.github.io/mobiquity-ergast/assets/icons/apple-touch-icon.png": "fb8ac73a88547e71cf08b1a1e78e53c7b520f8f6",
+    "https://romdim.github.io/mobiquity-ergast/assets/icons/favicon-128x128.png": "6c2b29da2a10dca4291b05062d0619ebf1286e0a",
+    "https://romdim.github.io/mobiquity-ergast/assets/icons/favicon-144x144.png": "7a584d33d63f3f14a07784e897758c4c5e17d4b3",
+    "https://romdim.github.io/mobiquity-ergast/assets/icons/favicon-152x152.png": "6635dba13bcf9a916c11d226ec22c3e4fb22f543",
+    "https://romdim.github.io/mobiquity-ergast/assets/icons/favicon-16x16.png": "572be1549af23ae32931501dfe2115f616fa4885",
+    "https://romdim.github.io/mobiquity-ergast/assets/icons/favicon-192x192.png": "1bd089715af0b6cc0c0f98904fa49f59ca827227",
+    "https://romdim.github.io/mobiquity-ergast/assets/icons/favicon-32x32.png": "64b80da7158386d91c6755c69e2751e48f551ce6",
+    "https://romdim.github.io/mobiquity-ergast/assets/icons/favicon-384x384.png": "734b594d2e89aacbfc1259c6be4b57da45ee7a93",
+    "https://romdim.github.io/mobiquity-ergast/assets/icons/favicon-512x512.png": "835df4a4c799b6387c88d1f3fc980a1c83bedf3b",
+    "https://romdim.github.io/mobiquity-ergast/assets/icons/favicon-96x96.png": "eadca8d847456b153d24151cf3dcbedb09ff7be6",
+    "https://romdim.github.io/mobiquity-ergast/assets/icons/mstile-144x144.png": "9a7ab956bda6ca5284e32398df7a360eae5b2e93",
+    "https://romdim.github.io/mobiquity-ergast/assets/icons/mstile-150x150.png": "8818978ea12ff639fe986a537fb18837e882184a",
+    "https://romdim.github.io/mobiquity-ergast/assets/icons/mstile-310x150.png": "8aa23acb387d8cedaf4afdcca92a674ceb3b928a",
+    "https://romdim.github.io/mobiquity-ergast/assets/icons/mstile-310x310.png": "c8392a43d4a6ad83aab723ee0114641ad2ac5e9a",
+    "https://romdim.github.io/mobiquity-ergast/assets/icons/mstile-70x70.png": "7c9d2ca860249d1a2140b028408c49bb26157d09",
+    "https://romdim.github.io/mobiquity-ergast/assets/icons/safari-pinned-tab.svg": "3101dda68712d555e345d8ab2c2872b8d4b6949d",
+    "https://romdim.github.io/mobiquity-ergast/assets/images/cockpit.svg": "5d677f4d27a017e27977efe02136b7b59cd25174",
+    "https://romdim.github.io/mobiquity-ergast/assets/images/cup.svg": "2a90ecccc7c5095041091f3ca5e28a48db32eb31",
+    "https://romdim.github.io/mobiquity-ergast/assets/images/driver.svg": "e59a83871768044758302d7f9bb131b20625ff8f",
+    "https://romdim.github.io/mobiquity-ergast/assets/images/f1.svg": "a59dde53f7931ca9b0631e6f31cd8c004fd4b7ff",
+    "https://romdim.github.io/mobiquity-ergast/assets/images/finish-line.svg": "3c29c9d36d539d458a7f04ed558d9d2204fcd560",
+    "https://romdim.github.io/mobiquity-ergast/assets/images/trophy.svg": "7ecf9aa90755c7044f8fd2461d92610f1bd1a1eb",
+    "https://romdim.github.io/mobiquity-ergast/favicon.ico": "89d2bcf776ade73ee8af1c68cdd3de844188ebc9",
+    "https://romdim.github.io/mobiquity-ergast/index.html": "667f17b2a6c864235b87750f26b1ee1a7e4a8488",
+    "https://romdim.github.io/mobiquity-ergast/main.09af6e5b034c04044d6b.js": "35bd0ac18dad659bfe33aebc488b649b2d91577c",
+    "https://romdim.github.io/mobiquity-ergast/polyfills.b4daf421c94934f530d4.js": "193f6d7b77c2bce633da2f543082303b4f32d7ed",
+    "https://romdim.github.io/mobiquity-ergast/runtime.a66f828dca56eeb90e02.js": "078e320cc6fdaf355836c3b1c52b059cdd33fc7e",
+    "https://romdim.github.io/mobiquity-ergast/styles.e4b1249d8376d327ecbb.css": "c8127d5e77019d1e760e6c3c382ecf720c1cab3d"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^\\/]*\\.[^\\/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^\\/]*__[^\\/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^\\/]*__[^\\/]*\\/.*$"
+    }
+  ]
+}
