@@ -4,7 +4,13 @@
   <img src="assets/images/finish-line.svg" alt="image" class="svg-48">
 </mat-toolbar>
 
-<a mat-stroked-button color="accent" class="padding-10" href="champions"><mat-icon class="md-14">keyboard_return</mat-icon>Back to Champions</a>
+<a
+  mat-stroked-button
+  color="accent"
+  class="padding-10"
+  href="champions">
+  <mat-icon class="md-14">keyboard_return</mat-icon>Back to Champions
+</a>
 
 <mat-accordion>
   <mat-expansion-panel *ngFor="let winner of winners; index as i"
@@ -29,13 +35,13 @@
         <mat-list>
           <mat-list-item>
             <p>
-              <a href="{{winner.driver.url}}">{{winner.driver.getFullName()}}<mat-icon class="md-14 md-dark">open_in_new</mat-icon></a> is <b>{{winner.driver.nationality}}</b> and was <b>{{winner.driver.ageThen(champion.season)}}</b> years old in {{season}}.
+              <a href="{{winner.driver.url}}" target="_blank">{{winner.driver.getFullName()}}<mat-icon class="md-14 md-dark">open_in_new</mat-icon></a> is <b>{{winner.driver.nationality}}</b> and was <b>{{winner.driver.ageThen(champion.season)}}</b> years old in {{season}}.
             </p>
           </mat-list-item>
           <mat-divider></mat-divider>
           <mat-list-item>
             <p>
-              {{winner.driver.givenName}} won at <b>{{winner.getRaceDateTime() | date:'d/M/yyyy HH:mm'}}</b> during <b><a href="{{winner.raceUrl}}">{{winner.raceName}}</a> - <a href="{{winner.circuitUrl}}">{{winner.circuitName}}</a><mat-icon class="md-14 md-dark">open_in_new</mat-icon></b> running <b>{{winner.laps}}</b> laps at only <b>{{winner.winningTime}}</b> in a <b><a href="{{winner.constructorDetails.url}}">{{winner.constructorDetails.name}}<mat-icon class="md-14 md-dark">open_in_new</mat-icon></a></b>.
+              {{winner.driver.givenName}} won at <b>{{winner.getRaceDateTime() | date:'d/M/yyyy HH:mm'}}</b> during <b><a href="{{winner.raceUrl}}" target="_blank">{{winner.raceName}}</a> - <a href="{{winner.circuitUrl}}" target="_blank">{{winner.circuitName}}</a><mat-icon class="md-14 md-dark">open_in_new</mat-icon></b> running <b>{{winner.laps}}</b> laps at only <b>{{winner.winningTime}}</b> in a <b><a href="{{winner.constructorDetails.url}}" target="_blank">{{winner.constructorDetails.name}}<mat-icon class="md-14 md-dark">open_in_new</mat-icon></a></b>.
             </p>
           </mat-list-item>
           <mat-divider></mat-divider>
