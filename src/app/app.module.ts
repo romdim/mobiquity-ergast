@@ -23,6 +23,7 @@ import { WinnersComponent } from './winners/winners.component';
 import { OrdinalPipe } from './shared/ordinal.pipe';
 import { environment } from '../environments/environment';
 import { LoaderService } from './shared/loader.service';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,9 @@ import { LoaderService } from './shared/loader.service';
 
     AgmCoreModule.forRoot({
       apiKey: environment.AgmApiKey
-    })
+    }),
+
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     LoaderService
