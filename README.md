@@ -1,22 +1,27 @@
 # MobiquityErgast
 
 This project's purpose was to create a SPA that presents a list with all the F1 World Champions starting from 2005 until 2015.
-Navigation was required to check the winners of every race of a selected year. The row that contains the world champion of the year
-was to be highlighted.
+Navigation was required to check the winners of every race of a selected year. The row that contains the world champion of the year was to be highlighted.
 The [Ergast API](https://ergast.com/mrd/) was used for this reason.
 
-Beyond the obvious I wanted to be coherent with the [Angular Styleguide](https://angular.io/guide/styleguide), create a Dockerfile for
-convenience, make the website a PWA and let it cache responses.
-
-The website can be seen at https://romdim.github.io/mobiquity-ergast. Github is kind enough to let projects host their
-services by using the gh-branch.
-
 Various desicions were taken in terms of UI and UX. I tried to keep things simple by using a well-established design, Material.
-I tried to show the most relevant information by default and let the user take the wheels to get more out of the site.
-I have decided to not include various stuff, going through git history one can see that, no big images but only the needed info
-with a few icons, no tables with dense data, just responsive layouts that are tested
+Beyond the obvious I wanted to be coherent with the [Angular Styleguide](https://angular.io/guide/styleguide), create a Dockerfile for convenience, make the website a PWA
+and let it cache responses.
+
+As no certain kind of visitors were defined for this test, I assumed that the site would target people
+that know eveything around F1 and want to learn even more, that's why it was essential to me to show
+the most of the info I could get by the Ergast service. This is why I went with accordion and not grid
+or cards, in order to show the most in a non-intrusive way. Also, photos of the drivers were
+considered but was declined as it would make the site static, while it should get the data
+dynamically. Cover photo was declined as well even though unsplash provides some very good, because
+it would push all the data below the fold.
+Google Maps was added as it shows the visitor the exact location of the race visualised.
+Responsive layout was a must for all devices.
+
 Angular was chosen as I've already worked with it, love Typescript and also wanted to test v6. I know version 6 may not be the most
 stable one as it is less than a month old, but it was just fine for a simple app.
+
+The website can be seen at https://romdim.github.io/mobiquity-ergast. Github is kind enough to let projects host their services by using the gh-branch.
 
 The first steps for scaffolding were:
 
