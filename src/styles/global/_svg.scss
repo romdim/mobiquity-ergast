@@ -1,5 +1,9 @@
 @import '~src/styles/global/mixins';
 
+.svg-18 {
+  @include rectangle-size(18px);
+}
+
 .svg-48 {
   @include rectangle-size(48px);
 }
