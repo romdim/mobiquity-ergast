@@ -8,36 +8,52 @@
   <mat-expansion-panel *ngFor="let champion of champions; index as i" [expanded]="step === i" (opened)="setStep(i)" hideToggle="false">
     <mat-expansion-panel-header>
       <mat-panel-title>
-        {{champion.season}}
+        {{champion.season}} - {{champion.driver.getFullName()}}
       </mat-panel-title>
-      <mat-panel-description>
-        {{champion.driver.getFullName()}}
-      </mat-panel-description>
       <!-- <span class="flag-icon" [ngClass]="'flag-icon-' + champion.driver.getCountryIso()"></span> -->
     </mat-expansion-panel-header>
 
+    <span class="flex-center">
+      <img src="assets/images/driver.svg" alt="image" class="svg-64" width="64px" height="64px">
+    </span>
+    <p class="flex-center">
+      <a
+        mat-stroked-button
+        color="primary"
+        href="{{champion.season}}/winners">
+        {{champion.season}} - Winners</a>
+    </p>
+
     <mat-grid-list cols="{{cols}}" rowHeight="{{rowHeight}}" (window:resize)="onResize($event)">
-        <mat-grid-tile>
-          <img src="assets/images/driver.svg" alt="image" class="svg-64">
-        </mat-grid-tile>
-        <mat-grid-tile colspan="{{mainColSpan}}" rowspan="{{mainRowSpan}}">
-          <mat-list>
-            <mat-list-item>
-              <p>
-                <a href="{{champion.driver.url}}">{{champion.driver.getFullName()}}<mat-icon class="md-14 md-dark">open_in_new</mat-icon></a> is <b>{{champion.driver.nationality}}</b> and was <b>{{champion.driver.ageThen(champion.season)}}</b> years old in {{champion.season}}.
-              </p>
-            </mat-list-item>
-            <mat-divider></mat-divider>
-            <mat-list-item>
-              <p>
-                {{champion.driver.givenName}} won <b>{{champion.wins}}</b> times and marked <b>{{champion.points}}</b> points while driving a <a href="{{champion.constructorDetails.url}}">{{champion.constructorDetails.name}}<mat-icon class="md-14 md-dark">open_in_new</mat-icon></a>.
-              </p>
-            </mat-list-item>
-          </mat-list>
-        </mat-grid-tile>
-      <mat-grid-tile>
+      <mat-grid-tile colspan="{{mainColSpan}}" rowspan="{{mainRowSpan}}">
         <mat-list>
-          <a mat-stroked-button color="primary" href="{{champion.season}}/winners" matBadge="{{champion.rounds}}" matBadgePosition="before" matBadgeColor="accent">{{champion.season}} - Winners</a>
+          <mat-list-item>
+            <p><b>Full Name:</b>&nbsp;<a href="{{champion.driver.url}}" target="_blank">{{champion.driver.getFullName()}}<mat-icon class="md-14 md-dark">open_in_new</mat-icon></a></p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>
+            <p><b>Nationality:</b> {{champion.driver.nationality}}</p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>
+            <p><b>Age in {{champion.season}}:</b> {{champion.driver.ageThen(champion.season)}}</p>
+          </mat-list-item>
+          <mat-divider *ngIf="dividerShow"></mat-divider>
+        </mat-list>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="{{mainColSpan}}" rowspan="{{mainRowSpan}}">
+        <mat-list>
+          <mat-list-item>
+            <p><b>Wins:</b> {{champion.wins}}</p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>
+            <p><b>Points:</b> {{champion.points}}</p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>
+            <p><b>Car:</b>&nbsp;<a href="{{champion.constructorDetails.url}}" target="_blank">{{champion.constructorDetails.name}}<mat-icon class="md-14 md-dark">open_in_new</mat-icon></a></p>
+          </mat-list-item>
         </mat-list>
       </mat-grid-tile>
     </mat-grid-list>

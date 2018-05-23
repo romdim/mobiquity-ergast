@@ -13,10 +13,12 @@ import { LoaderService } from '../shared/loader.service';
 export class ChampionsComponent implements OnInit {
   champions: Champion[];
   step = -1;
-  cols = 1;
+  cols = 2;
+  iconSpan = 1;
   mainColSpan = 1;
-  mainRowSpan = 2;
+  mainRowSpan = 1;
   rowHeight = '3:1';
+  dividerShow = false;
 
   constructor(
     private ergastService: ErgastService,
@@ -76,25 +78,30 @@ export class ChampionsComponent implements OnInit {
    * @param windowWidth - The size of the window width
    */
   resizeGrid(windowWidth: number): void {
-    if (windowWidth < 768) {
+    if (windowWidth < 600) {
       this.cols = 1;
       this.mainColSpan = 1;
       this.mainRowSpan = 2;
-
-      if (windowWidth > 540) {
-        this.rowHeight = '8:1';
-      } else if (windowWidth > 350) {
-        this.rowHeight = '4:1';
-      } else if (windowWidth > 300) {
-        this.rowHeight = '3:1';
-      } else {
-        this.rowHeight = '2:1';
+      this.rowHeight = '5.5:1';
+      this.dividerShow = true;
+      if (windowWidth < 340) {
+        this.mainRowSpan = 7;
+        this.rowHeight = '10:1';
+      } else if (windowWidth < 450) {
+        this.mainRowSpan = 6;
+        this.rowHeight = '10:1';
+      } else if (windowWidth < 520) {
+        this.mainRowSpan = 3;
+        this.rowHeight = '7:1';
       }
     } else {
-      this.cols = 5;
-      this.mainColSpan = 3;
+      this.cols = 2;
       this.mainRowSpan = 1;
-      this.rowHeight = '1:1';
+      this.rowHeight = '3:1';
+      this.dividerShow = false;
+      if (windowWidth < 1100) {
+        this.rowHeight = '2:1';
+      }
     }
   }
 }
