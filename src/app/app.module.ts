@@ -52,7 +52,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
       apiKey: environment.AgmApiKey
     }),
 
-    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('/mobiquity-ergast/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     LoaderService
