@@ -62,10 +62,11 @@ After installing Docker you can run:
 
 ```bash
 docker build . -t me
-docker run me
+docker run -p 80:80 me
 ```
 
-And then if you go over to [localhost:8080](http://localhost:8080) you will see the site.
+These commands build the project intended for production server and serve it for you.
+So you can just go over to [localhost](http://localhost).
 
 ## Development server
 
