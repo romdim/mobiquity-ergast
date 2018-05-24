@@ -28,9 +28,9 @@ RUN npm install
 COPY ./src ./src/
 
 # Build the project and produce the dist folder
-RUN node_modules/@angular/cli/bin/ng build --prod
+RUN node_modules/@angular/cli/bin/ng build --prod --base-href '/'
 
 # Move the dist files in the nginx serving point
-RUN mv dist/mobiquity-ergast/* /usr/share/nginx/html/
+RUN mv dist/* /usr/share/nginx/html/
 
 EXPOSE 80

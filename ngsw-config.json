@@ -18,7 +18,22 @@
     "resources": {
       "files": [
         "/assets/**"
+      ],
+      "urls": [
+        "https://fonts.googleapis.com/icon?family=Material+Icons"
       ]
     }
-  }]
+  }],
+  "dataGroups": [
+  {
+    "name": "ergast-api",
+    "urls": ["/champions", "/*/winners"],
+    "cacheConfig": {
+      "strategy": "freshness",
+      "maxSize": 15,
+      "maxAge": "1h",
+      "timeout": "5s"
+    }
+  }
+]
 }
