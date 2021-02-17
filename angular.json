@@ -40,7 +40,7 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "baseHref": "https://romdim.github.io/mobiquity-ergast/",
+              "baseHref": "https://romdim.nl/mobiquity-ergast/",
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,

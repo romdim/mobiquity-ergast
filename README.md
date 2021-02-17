@@ -21,7 +21,7 @@ Responsive layout was a must for all devices.
 Angular was chosen as I've already worked with it, love Typescript and also wanted to test v6. I know version 6 may not be the most
 stable one as it is less than a month old, but it was just fine for a simple app.
 
-The website can be seen at https://romdim.github.io/mobiquity-ergast. Github is kind enough to let projects host their services by using the gh-branch.
+The website can be seen at https://romdim.nl/mobiquity-ergast. Github is kind enough to let projects host their services by using the gh-branch.
 
 The first steps for scaffolding were:
 
